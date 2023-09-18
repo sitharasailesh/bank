@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application</title>
+</head>
+
+<style>
+body {
+  background-image: url('https://th.bing.com/th/id/OIP.JwPbNjiqQ_gtCZu70IVrKAHaFj?pid=ImgDet&rs=1');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<h1 style ="text-align:center;font-size:160%;color:black">Click below for the Application form</h1>
+<form style="text-align:center;color:black;" action="login" method="post">
+    {% csrf_token %}
+
+    <button type="submit" formaction="{% url 'account_create_view' %}">Apply Online</button>
+</form>
+</body>
+</html>

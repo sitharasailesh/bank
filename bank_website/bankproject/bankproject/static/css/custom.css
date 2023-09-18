@@ -1,0 +1,14 @@
+
+/*** nav bar settings ***/
+.nav_item{
+        letter spacing=.2em;
+        font-size:14px;
+        text-transform:uppercase;
+}
+
+.dropdown_item{
+        letter spacing=.2em;
+        font-size:14px;
+        text-transform:uppercase;
+}
+

@@ -1,0 +1,43 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+        <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  Branches
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Ernakulam">Ernakulam</a></li>
+    <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Malappuram">Malappuram</a></li>
+    <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Idukki_district">Idukki</a></li>
+    <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kottayam">Kottayam</a></li>
+    <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Thiruvananthapuram">Trivandrum</a></li>
+    <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kollam">Kollam</a></li>
+    <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Alappuzha">Alappuzha</a></li>
+    <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Thrissur">Thrissur</a></li>
+  </ul>
+        </div>
+      </ul>
+    </div>
+
+</nav>
+<div>
+    <img class="my_image my_image_padding" src="https://i.pinimg.com/originals/1c/e6/3d/1ce63dcbcc968187b0e9b0261aeada5e.jpg" alt="" width="1110px;"height="600px;" >
+</div>
+</div>
+<div style="text-align:center">
+  <a class="btn btn-success"  href="{% url 'login' %}">Login Here</a>
+</div>

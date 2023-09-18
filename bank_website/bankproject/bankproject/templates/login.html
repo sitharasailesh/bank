@@ -1,0 +1,27 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<style>
+body {
+  background-image: url('https://callcia.com/wp-content/uploads/2019/08/Form-background-image-2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<h1 style ="text-align:center;font-size:160%;color:black;">Login</h1>
+<form style="text-align:center;" action="login" method="post">
+    {% csrf_token %}
+    <input type="text" class="shadow-form-control" name="username" placeholder="Enter username"><br>
+    <input type="password" name="password" placeholder="Enter Password"><br>
+    <button type="submit" formaction="{% url 'page' %}">Submit</button><br>
+    <button type="submit" name="registerlink"><a href="{% url 'register' %}">Register link</a></button>
+</form>
+
+</html>

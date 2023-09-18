@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Form</title>
+</head>
+<body style="text-align:center;background-image:url('https://primelegalstaff.com/wp-content/uploads/2016/11/application-background1.jpg');">
+<h1 style="text-align:center;color:black;font-family:veranda;font-size:160%;">Application Form</h1>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#id_district').change(function() {
+    var url = "/get_branches/" + $(this).val() + "/";
+    $.ajax({
+        url: url,
+        success: function(data) {
+            var options = '<option value="">---------</option>';
+            for (var i=0; i<data.length; i++) {
+                options += '<option value="' + data[i].id + '">' + data[i].name + '</option>';
+            }
+            $('#id_branch').html(options);
+        }
+    });
+});
+
+});
+</script>
+
+</body>
+
+
+<!--<div class="container">-->
+
+<!--<form style="margin:15px;padding:0;line-height:40px;text-align:center;" >-->
+<!--    {% csrf_token %}-->
+
+<!--    <label>Name</label>-->
+<!--    <input type="text" name="name"><br>-->
+<!--    <label>Date of Birth</label>-->
+<!--    <input type="date" name="dob"><br>-->
+<!--    <label>Age</label>-->
+<!--    <input type="number" name="age"><br>-->
+<!--    <label>Gender</label>-->
+<!--    <select id="gender" name="gender">-->
+<!--        <option value=""></option>-->
+<!--        <option value="male">Male</option>-->
+<!--        <option value="female">Female</option>-->
+<!--        <option value="other">Other</option>-->
+<!--    </select><br>-->
+<!--    <label>Phone Number</label>-->
+<!--    <input type="tel" name="phone"><br>-->
+<!--    <label>Mail Id</label>-->
+<!--    <input type="email" name="email"><br>-->
+<!--    <label >Address</label>-->
+<!--    <textarea id="address" name="address"></textarea><br>-->
+
+<!-- <label>District</label>-->
+<!--    <select name="district">-->
+
+<!--            <option value="{{district.id}}" >{{district.name}}</option>-->
+<!--    </select>-->
+
+<!--<label>Branch</label>-->
+<!--    <select name="branch">-->
+<!--        {% for i in branches %}-->
+<!--            <option value="{{ i.id }}">{{ i.name }}</option>-->
+<!--        {% endfor %}-->
+<!--    </select><br>-->
+
+
+<!--<label>Account type</label>-->
+<!--    <select name="account_type">-->
+<!--        <option  value="select account type"></option>-->
+<!--        <option  value="savings">Savings Account</option>-->
+<!--        <option  value="current">Current Account</option>-->
+<!--    </select><br>-->
+<!--    <label>Materials Provided:</label>-->
+<!--    <input type="checkbox" name="materials[]" value="debit_card">Debit Card-->
+<!--    <input type="checkbox" name="materials[]" value="credit_card">Credit Card-->
+<!--    <input type="checkbox" name="materials[]" value="cheque_book">Cheque Book<br>-->
+
+
+    <form id="myForm">
+    <input type="submit" value="Submit" onclick="return confirmBox()" value="Submit">
+        <input type="submit" value="logout" onclick="{% url 'logout' %}">
+</form>
+
+<script>
+function confirmBox() {
+    var txt;
+    if (confirm("Click OK to go to Home page, or Cancel to stay on this page.")) {
+        window.location.href = "{% url 'home' %}";
+    }
+    return false;
+}
+</script>
+
+
+</form>
+
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
